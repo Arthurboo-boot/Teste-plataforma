@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080D18">
+  <title>Academia Águia — Centro de Formação e Estudos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="toast" class="toast" role="status"></div>
+  <main id="app">
+    <section id="loginScreen" class="login-screen">
+      <div class="login-card">
+        <div class="brand-mark" id="brandMark">Á</div>
+        <p class="eyebrow">CENTRO DE FORMAÇÃO E ESTUDOS</p>
+        <h1>ACADEMIA <span>ÁGUIA</span></h1>
+        <p class="motto">DISCIPLINA • CONHECIMENTO • PREPARAÇÃO</p>
+        <form id="loginForm">
+          <label for="loginUser">Usuário / matrícula</label>
+          <input id="loginUser" autocomplete="username" required placeholder="Digite seu usuário">
+          <label for="loginPassword">Senha</label>
+          <input id="loginPassword" type="password" autocomplete="current-password" required placeholder="Digite sua senha">
+          <button class="btn primary full" type="submit">Entrar na plataforma</button>
+        </form>
+        <p class="login-note">Acesse com sua matrícula e a senha fornecida pela administração.</p>
+      </div>
+    </section>
+
+    <section id="passwordScreen" class="login-screen hidden">
+      <div class="login-card compact">
+        <div class="brand-mark small">Á</div>
+        <p class="eyebrow">PRIMEIRO ACESSO</p>
+        <h2>Crie sua nova senha</h2>
+        <p class="muted">Por segurança, altere a senha provisória fornecida pela administração.</p>
+        <form id="passwordForm">
+          <label for="newPassword">Nova senha</label>
+          <input id="newPassword" type="password" minlength="6" required>
+          <label for="confirmPassword">Confirme a nova senha</label>
+          <input id="confirmPassword" type="password" minlength="6" required>
+          <button class="btn primary full">Salvar nova senha</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="mainScreen" class="hidden">
+      <header class="topbar">
+        <button class="brand-mini" data-page="dashboard"><span class="brand-mini-mark">Á</span><span><b>ACADEMIA ÁGUIA</b><small>CENTRO DE FORMAÇÃO E ESTUDOS</small></span></button>
+        <div class="top-actions">
+          <span id="userLabel" class="user-label"></span>
+          <button id="themeToggle" class="icon-btn" title="Alternar tema" aria-label="Alternar tema">☼</button>
+          <button id="logoutBtn" class="btn outline small-btn">Sair</button>
+        </div>
+      </header>
+      <div class="layout">
+        <aside class="sidebar" id="sidebar">
+          <div class="side-caption">MENU PRINCIPAL</div>
+          <nav id="navigation">
+            <button class="nav-link active" data-page="dashboard">▦ <span>Painel inicial</span></button>
+            <button class="nav-link" data-page="subjects">▤ <span>Disciplinas e aulas</span></button>
+            <button class="nav-link" data-page="questions">☑ <span>Questões e simulados</span></button>
+            <button class="nav-link" data-page="library">▣ <span>Biblioteca</span></button>
+            <button class="nav-link" data-page="teachers">♙ <span>Corpo docente</span></button>
+            <button class="nav-link" data-page="performance">▥ <span>Meu desempenho</span></button>
+            <div id="teacherNav" class="hidden">
+              <div class="side-caption">ÁREA DO PROFESSOR</div>
+              <button class="nav-link" data-page="editor">✎ <span>Central de publicação</span></button>
+              <button class="nav-link" data-page="myPosts">▧ <span>Minhas publicações</span></button>
+              <button class="nav-link" data-page="myProfile">♙ <span>Meu perfil docente</span></button>
+            </div>
+            <div id="adminNav" class="hidden">
+              <div class="side-caption">ADMINISTRAÇÃO</div>
+              <button class="nav-link" data-page="admin">⚙ <span>Painel administrativo</span></button>
+              <button class="nav-link" data-page="users">♧ <span>Usuários e matrículas</span></button>
+              <button class="nav-link" data-page="manageSubjects">▤ <span>Gerenciar disciplinas</span></button>
+              <button class="nav-link" data-page="manageContent">▧ <span>Gerenciar publicações</span></button>
+            </div>
+          </nav>
+          <div class="sidebar-footer"><span class="status-dot"></span> Ambiente conectado</div>
+        </aside>
+        <section class="content-area">
+          <div class="mobile-heading"><button id="menuToggle" class="icon-btn">☰</button><span id="mobilePageTitle">Painel inicial</span></div>
+          <div id="pageContent" class="page-fade"></div>
+          <footer>ACADEMIA ÁGUIA <span>•</span> DISCIPLINA • CONHECIMENTO • PREPARAÇÃO</footer>
+        </section>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
