@@ -1,2 +1,2 @@
 # Teste-plataforma
-Ambiente de testes da Academia Águia
+Ambiente de testes da Academia Águia.
